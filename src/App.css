@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  font-family: 'Domine', serif;
+}
+@media (prefers-reduced-motion: no-preference) {
+ }
+.App-header {
+  background-color: #161748;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  }
+  h1 {
+    margin-bottom: 100px;
+  }
+.App-link {
+  color: #61dafb;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.App-logo {
+  scale: 120%;
+  margin-top: 40px;
+}
+.d-flex {
+  display: flex;
+}
+.initial {
+  display: block;
+  
+}
+
+.main {
+  
+  max-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #c2b490;
+}
