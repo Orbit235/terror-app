@@ -1,59 +1,68 @@
 import React from 'react';
-import logo from './logo.png';
 import './App.css';
-import {
-  EuiFlexGroup,
-  EuiFlexItem,
-  EuiFormRow,
-  EuiButton,
-  EuiTextArea,
-  EuiFieldText,
-} from '@elastic/eui';
-function App() {
+import { EuiPageHeader,
+EuiFlexGroup,
+EuiFlexItem,
+EuiFormRow,
+EuiButton,
+EuiFieldText,
+EuiTextArea
+} from "@elastic/eui";
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          Запрос в БД Росфинмониторинга
-        </h1>        
-      </header>
-      <section className='main'>
-      
-  <EuiFlexGroup>
-    <EuiFlexItem>
-      <EuiFormRow label="Фамилия">
-        <EuiFieldText />
-      </EuiFormRow>
-    </EuiFlexItem>
-    <EuiFlexItem>
-      <EuiFormRow label="Имя">
-        <EuiFieldText />
-      </EuiFormRow>
-    </EuiFlexItem>
-    <EuiFlexItem>
-      <EuiFormRow label="Отчество">
-        <EuiFieldText />
-      </EuiFormRow>
-    </EuiFlexItem>
-    <EuiFlexItem>
-      <EuiFormRow label="Дата рождения">
-        <EuiFieldText />
-      </EuiFormRow>
-    </EuiFlexItem>
-    <EuiFlexItem grow={false}>
-      <EuiFormRow hasEmptyLabelSpace>
-        <EuiButton>Запросить Росфинмониторинг</EuiButton>
-      </EuiFormRow>
-    </EuiFlexItem>
-  </EuiFlexGroup>
-  <EuiFormRow label="Результат проверки" fullWidth>
+      <EuiPageHeader
+        alignItems="center"
+        justifycontent = "space between"
+        pageTitle="База данных Росфинмониторинга"
+        iconType="logoSecurity"
+        description="Проверьте информацию о контрагенте по Переченю организаций и физических лиц, в отношении которых имеются сведения об их причастности к экстремистской деятельности или терроризму"
+        rightSideItems={[
+          <EuiButton fill>Ссылка на законодательство</EuiButton>,
+  
+        ]}
+        tabs={[
+          {
+            label: "Физические лица",
+            isSelected: true,
+          },
+          {
+            label: "Юридические лица",
+            isSelected: true,
+          },
+        ]}
+      />
+      <EuiFlexGroup direction="column" style={{ maxWidth: 250 }}>
+        <EuiFlexItem>
+          <EuiFormRow label="Фамилия" placeholder="Фамилия">
+            <EuiFieldText />
+          </EuiFormRow>
+        </EuiFlexItem>
+        <EuiFlexItem>
+          <EuiFormRow label="Имя" placeholder="Имя">
+            <EuiFieldText />
+          </EuiFormRow>
+        </EuiFlexItem>
+        <EuiFlexItem>
+          <EuiFormRow label="Отчество" placeholder="Отчество">
+            <EuiFieldText />
+          </EuiFormRow>
+        </EuiFlexItem>
+        <EuiFlexItem>
+          <EuiFormRow label="Дата рождения" placeholder="Дата рождения">
+            <EuiFieldText />
+          </EuiFormRow>
+        </EuiFlexItem>
+        <EuiFlexItem grow={false}>
+          <EuiFormRow hasEmptyLabelSpace>
+            <EuiButton>Запросить сведения</EuiButton>
+          </EuiFormRow>
+        </EuiFlexItem>
+      </EuiFlexGroup>
       <EuiTextArea
-        fullWidth
-        />
-    </EuiFormRow>
-
-      </section>
+        placeholder="Результат запроса"
+        aria-label="Use aria labels when no actual label is in use"
+      />
     </div>
   );
 }
